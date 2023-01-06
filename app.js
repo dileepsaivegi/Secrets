@@ -3,13 +3,13 @@ const express=require('express');
 const mongoose= require('mongoose');
 const ejs=require('ejs');
 const app=express();
-const MemoryStore = require('memorystore')(session);
 
 const passport=require('passport');
 const passportLocal=require('passport-local');
 const passportLocalMongoose=require('passport-local-mongoose');
 const session=require('express-session');
-var findOrCreate = require('mongoose-findorcreate')
+const MemoryStore = require('memorystore')(session);
+const findOrCreate = require('mongoose-findorcreate');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 require('dotenv').config();
