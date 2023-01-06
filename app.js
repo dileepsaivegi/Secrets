@@ -19,7 +19,7 @@ app.use(session({
   secret:"ourlittlesecret",
   store: new MemoryStore({
       checkPeriod: 86400000 // prune expired entries every 24h
-    });,
+    }),
   resave:false,
   saveUninitialized:true,
   cookie: {}
