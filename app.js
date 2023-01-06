@@ -3,6 +3,7 @@ const express=require('express');
 const mongoose= require('mongoose');
 const ejs=require('ejs');
 const app=express();
+const MemoryStore = require('memorystore')(session);
 
 const passport=require('passport');
 const passportLocal=require('passport-local');
@@ -16,6 +17,9 @@ app.set("view engine",'ejs');
 
 app.use(session({
   secret:"ourlittlesecret",
+  store: new MemoryStore({
+      checkPeriod: 86400000 // prune expired entries every 24h
+    });,
   resave:false,
   saveUninitialized:true,
   cookie: {}
